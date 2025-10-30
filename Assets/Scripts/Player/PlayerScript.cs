@@ -32,7 +32,7 @@ public class PlayerScript : MonoBehaviour
         // Set Velocity to 0
         mVelocity = Vector3.zero;
 
-        // Get Camera Pivot
+        // Get Camera Pivotc
         mCameraPivot = transform.Find("CameraPivot");
 
         // Get Input Actions
