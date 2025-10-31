@@ -3,11 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class loadLevel1Script : MonoBehaviour
 {
-    private string[] scenesToLoad = {"Level1_Base", "Level1_Player", "Level1_Items"};
+    public string level;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        string[] scenesToLoad = { $"Level{level}_Base", $"Level{level}_Player", $"Level{level}_Items" };
+        
         //Load the other parts of the level
         foreach(string scene in scenesToLoad)
         {
