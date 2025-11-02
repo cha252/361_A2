@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 58695491}
   - component: {fileID: 58695490}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: livesText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,7 +154,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -303.2, y: 113.4}
+  m_AnchoredPosition: {x: -310, y: 135}
   m_SizeDelta: {x: 100, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &58695490
@@ -354,7 +354,7 @@ GameObject:
   - component: {fileID: 741648833}
   - component: {fileID: 741648832}
   m_Layer: 0
-  m_Name: Text (TMP) (2)
+  m_Name: timeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -377,7 +377,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 360.4, y: 113.40002}
+  m_AnchoredPosition: {x: 360.4, y: 135}
   m_SizeDelta: {x: 100, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &741648832
@@ -570,7 +570,7 @@ GameObject:
   - component: {fileID: 1282883117}
   - component: {fileID: 1282883116}
   m_Layer: 0
-  m_Name: Image
+  m_Name: coinsIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -645,7 +645,7 @@ GameObject:
   - component: {fileID: 1302649762}
   - component: {fileID: 1302649761}
   m_Layer: 0
-  m_Name: Image
+  m_Name: timeIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -795,7 +795,7 @@ GameObject:
   - component: {fileID: 1660359353}
   - component: {fileID: 1660359352}
   m_Layer: 0
-  m_Name: Text (TMP) (1)
+  m_Name: coinsText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -818,7 +818,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -303.2, y: 84.60001}
+  m_AnchoredPosition: {x: -310, y: 110}
   m_SizeDelta: {x: 100, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1660359352
@@ -1014,7 +1014,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 551300163}
-  m_PlaneDistance: 7.5
+  m_PlaneDistance: 3
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
