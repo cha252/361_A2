@@ -141,6 +141,6 @@ public class PlayerScript2 : MonoBehaviour
 
     void LateUpdate()
     {
-        mCharacterModel.localRotation = Quaternion.Euler(0, mTargetRotationY, 0);
+            mCharacterModel.localRotation = Quaternion.Euler(0, mTargetRotationY, 0);
     }
 }
