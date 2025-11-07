@@ -37,7 +37,7 @@ public class PlayerScript2 : MonoBehaviour
 
         // Get Camera Pivot
         mCameraPivot = transform.Find("CameraPivot");
-        mCharacterModel = transform.Find("Rig"); // have to rotate rotate "rig" not the mesh to work. 
+        mCharacterModel = transform.Find("HumanM_Model/Rig"); // have to rotate rotate "rig" not the mesh to work. 
 
         // Get Input Actions
         mMoveAction = InputSystem.actions.FindAction("Move");
@@ -116,7 +116,7 @@ public class PlayerScript2 : MonoBehaviour
         {
             mVelocity.z = 0.0f;
         }
-
+    
         // Update Animator Variables
         mAnimator.SetFloat("Speed", Mathf.Abs(mVelocity.z));
         mAnimator.SetBool("isGrounded", mController.isGrounded);
