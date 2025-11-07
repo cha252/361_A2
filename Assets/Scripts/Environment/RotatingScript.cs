@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RotatingScript : MonoBehaviour
@@ -15,7 +16,7 @@ public class RotatingScript : MonoBehaviour
         angle = startAngle;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         //Update the angle 
         angle += speed * Time.deltaTime;
@@ -28,5 +29,21 @@ public class RotatingScript : MonoBehaviour
         //Calculate and update the new position of the platform
         Vector3 offset = new Vector3(0f, Mathf.Cos(rad), Mathf.Sin(rad)) * radius;
         transform.position = centerPoint.position + offset;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            other.transform.parent = transform;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            other.transform.parent = null;
+        }
     }
 }

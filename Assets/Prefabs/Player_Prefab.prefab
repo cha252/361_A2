@@ -251,9 +251,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2faa610713d3b3c439473daa55e8c60a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2778433207053295655}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2faa610713d3b3c439473daa55e8c60a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1913487163905679193}
   m_SourcePrefab: {fileID: 100100000, guid: 2faa610713d3b3c439473daa55e8c60a, type: 3}
 --- !u!1 &5079638563267615425 stripped
 GameObject:
@@ -284,7 +281,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1.08, z: 0}
+  m_Center: {x: 0, y: 0.99, z: 0}
 --- !u!114 &2778433207053295655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,32 +291,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 5079638563267615425}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fffe182ff59e49ca835a428cd3428e8, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e380cba4c4397241994267a6974ba1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mVelocity: {x: 0, y: 0, z: 0}
   WalkSpeed: 2
   RunSpeed: 4
   SprintSpeed: 6
---- !u!114 &1913487163905679193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5079638563267615425}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04576fe62a3ec4ea885170c8d956cb81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LeftFoot: {fileID: 0}
-  RightFoot: {fileID: 0}
-  LeftFootHeight: 0.11
-  RightFootHeight: 0.11
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 0
+  respawnPosition: {x: 0.34, y: 1.35, z: -63}
+  fallThreshold: -20
 --- !u!4 &5563441909298446459 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2faa610713d3b3c439473daa55e8c60a, type: 3}

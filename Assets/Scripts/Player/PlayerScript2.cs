@@ -16,7 +16,7 @@ public class PlayerScript2 : MonoBehaviour
 
     private Transform mCharacterModel;
 
-    public Vector3 respawnPosition = new Vector3(0.34f, 1.35f, -63f); // jy - respawn location. 
+    public Vector3 respawnPosition; // jy - respawn location. 
     public float fallThreshold = -20f; //jy - respawn fall threshold 
 
     // Input Actions
@@ -37,6 +37,7 @@ public class PlayerScript2 : MonoBehaviour
 
         // Get Camera Pivot
         mCameraPivot = transform.Find("CameraPivot");
+
         mCharacterModel = transform.Find("HumanM_Model/Rig"); // have to rotate rotate "rig" not the mesh to work. 
 
         // Get Input Actions
@@ -141,6 +142,6 @@ public class PlayerScript2 : MonoBehaviour
 
     void LateUpdate()
     {
-            mCharacterModel.localRotation = Quaternion.Euler(0, mTargetRotationY, 0);
+        mCharacterModel.localRotation = Quaternion.Euler(0, mTargetRotationY, 0);
     }
 }

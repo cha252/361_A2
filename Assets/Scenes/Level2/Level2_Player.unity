@@ -306,7 +306,23 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: b73d702678f096547bf5c78e93f0c22f, type: 2}
     - target: {fileID: 2778433207053295655, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2778433207053295655, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
+      propertyPath: fallThreshold
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2778433207053295655, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
+      propertyPath: respawnPosition.x
+      value: 0.3479452
+      objectReference: {fileID: 0}
+    - target: {fileID: 2778433207053295655, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
+      propertyPath: respawnPosition.y
+      value: 11.455
+      objectReference: {fileID: 0}
+    - target: {fileID: 2778433207053295655, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
+      propertyPath: respawnPosition.z
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 2778433207053295655, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
       propertyPath: scenesToLoad.Array.size
@@ -331,6 +347,10 @@ PrefabInstance:
     - target: {fileID: 5079638563267615425, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
       propertyPath: m_Name
       value: HumanM_Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 5079638563267615425, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5563441909298446459, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -372,6 +392,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6669276684471542572, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 7124198951892920153, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.84
@@ -404,6 +428,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8485807941581165277, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
+      propertyPath: m_Height
+      value: 1.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 8485807941581165277, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
+      propertyPath: m_Center.y
+      value: 0.9
+      objectReference: {fileID: 0}
     - target: {fileID: 9131550267385832033, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
@@ -414,10 +446,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2446337385511893740, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1760351380}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5079638563267615425, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1856177838}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
 --- !u!4 &551300162 stripped
 Transform:
@@ -1113,29 +1142,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1 &1856177832 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5079638563267615425, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
-  m_PrefabInstance: {fileID: 551300161}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1856177838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1856177832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e380cba4c4397241994267a6974ba1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mVelocity: {x: 0, y: 0, z: 0}
-  WalkSpeed: 2
-  RunSpeed: 4
-  SprintSpeed: 6
-  respawnPosition: {x: 0.3479452, y: 0.1, z: -48.55872}
-  fallThreshold: -20
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
