@@ -20,10 +20,4 @@ public class loadLevel1Script : MonoBehaviour
                 SceneManager.LoadScene(scene, LoadSceneMode.Additive);
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }
