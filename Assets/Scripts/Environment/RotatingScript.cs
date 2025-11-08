@@ -33,17 +33,11 @@ public class RotatingScript : MonoBehaviour
     //Methods to move the player with the platforms as they move
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            other.transform.parent = transform;
-        }
+        other.transform.parent = transform;
     }
 
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            other.transform.parent = null;
-        }
+        other.transform.parent = null;
     }
 }
