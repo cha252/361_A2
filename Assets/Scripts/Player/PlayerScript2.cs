@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class PlayerScript2 : MonoBehaviour
 {
@@ -11,13 +10,14 @@ public class PlayerScript2 : MonoBehaviour
     public float WalkSpeed = 2f;
     public float RunSpeed = 4f;
     public float SprintSpeed = 6f;
-    private Transform mCameraPivot;
     private bool mWasGrounded = false;
 
     private Transform mCharacterModel;
 
     public Vector3 respawnPosition; // jy - respawn location. 
     public float fallThreshold = -20f; //jy - respawn fall threshold 
+    [SerializeField] TextMeshProUGUI numCoinsText, numLivesText; //TextMeshPro objects for UI
+    private int numCoins, numLives; //Int values for coins and lives
 
     // Input Actions
     private InputAction mMoveAction, mWalkAction, mSprintAction, mJumpAction;
@@ -35,9 +35,6 @@ public class PlayerScript2 : MonoBehaviour
         // Set Velocity to 0
         mVelocity = Vector3.zero;
 
-        // Get Camera Pivot
-        mCameraPivot = transform.Find("CameraPivot");
-
         mCharacterModel = transform.Find("HumanM_Model/Rig"); // have to rotate rotate "rig" not the mesh to work. 
 
         // Get Input Actions
@@ -45,6 +42,10 @@ public class PlayerScript2 : MonoBehaviour
         mWalkAction = InputSystem.actions.FindAction("Walk");
         mSprintAction = InputSystem.actions.FindAction("Sprint");
         mJumpAction = InputSystem.actions.FindAction("Jump");
+
+        //Initialise the coins and lives values
+        numCoins = 0;
+        numLives = 5;
     }
 
     private void Jump()
@@ -59,6 +60,8 @@ public class PlayerScript2 : MonoBehaviour
         transform.position = respawnPosition;
         mController.enabled = true;
         mVelocity = Vector3.zero;
+        //Decrement the lives value
+        numLives--;
     }
 
     private float mTargetRotationY = 0f;
@@ -138,10 +141,27 @@ public class PlayerScript2 : MonoBehaviour
 
         // Move Character
         mController.Move(mVelocity * Time.deltaTime);
+        
+        //Update the coin and lives vaules
+        numCoinsText.text = numCoins.ToString();
+        numLivesText.text = numLives.ToString();
     }
 
     void LateUpdate()
     {
         mCharacterModel.localRotation = Quaternion.Euler(0, mTargetRotationY, 0);
+    }
+
+    //Added the below method to collect the coins
+    void OnTriggerEnter(Collider other)
+    {
+        //If the player is the collision
+        if (other.CompareTag("Coin"))
+        {
+            //Hide the coin
+            other.gameObject.SetActive(false);
+            //Update the player's coin count
+            numCoins++;
+        }
     }
 }

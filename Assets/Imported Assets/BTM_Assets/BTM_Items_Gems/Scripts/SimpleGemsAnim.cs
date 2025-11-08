@@ -79,17 +79,6 @@ namespace Benjathemaker
         {
             return t < 0.5f ? 2 * t * t : 1 - Mathf.Pow(-2 * t + 2, 2) / 2;
         }
-
-        //Added the below method to collect the coins
-        void OnTriggerEnter(Collider other)
-        {
-            //If the player is the collision
-            if (other.CompareTag("Player"))
-            {
-                //Hide the coin
-                gameObject.SetActive(false);
-            }
-        }
     }
 }
 

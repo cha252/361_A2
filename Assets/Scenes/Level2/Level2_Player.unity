@@ -177,7 +177,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: numLives
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -309,6 +309,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2778433207053295655, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
+      propertyPath: numCoinsText
+      value: 
+      objectReference: {fileID: 1660359352}
+    - target: {fileID: 2778433207053295655, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
+      propertyPath: numLivesText
+      value: 
+      objectReference: {fileID: 58695490}
+    - target: {fileID: 2778433207053295655, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
       propertyPath: fallThreshold
       value: -10
       objectReference: {fileID: 0}
@@ -318,11 +326,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2778433207053295655, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
       propertyPath: respawnPosition.y
-      value: 11.455
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2778433207053295655, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
       propertyPath: respawnPosition.z
-      value: 70
+      value: -48.55872
       objectReference: {fileID: 0}
     - target: {fileID: 2778433207053295655, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
       propertyPath: scenesToLoad.Array.size
@@ -957,9 +965,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'numCoins
-
-'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
