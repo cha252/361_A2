@@ -127,6 +127,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1561286544270200436, guid: 55bf48159e3b1b643a990e357209dde9, type: 3}
+      propertyPath: fire_interval
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7372099698850718487, guid: 55bf48159e3b1b643a990e357209dde9, type: 3}
       propertyPath: m_Name
       value: tank
@@ -209,14 +213,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a50d04102f429ce49bb94f0791d4ed3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raise_height: 2
-  raise_speed: 11
-  stay_duration: 1
-  lower_speed: 11
-  idle_duration: 1
-  kb_force: 12
-  warning_indicator: {fileID: 0}
-  warning_duration: 0.5
+  raiseHeight: 2
+  raiseSpeed: 11
+  stayDuration: 1
+  lowerSpeed: 11
+  idleDuration: 1
 --- !u!54 &459067381
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -367,14 +368,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a50d04102f429ce49bb94f0791d4ed3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raise_height: 2
-  raise_speed: 11
-  stay_duration: 1
-  lower_speed: 11
-  idle_duration: 1
-  kb_force: 12
-  warning_indicator: {fileID: 0}
-  warning_duration: 0.5
+  raiseHeight: 2
+  raiseSpeed: 11
+  stayDuration: 1
+  lowerSpeed: 11
+  idleDuration: 1
 --- !u!54 &1226487647
 Rigidbody:
   m_ObjectHideFlags: 0
