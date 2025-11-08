@@ -348,6 +348,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HumanM_Model
       objectReference: {fileID: 0}
+    - target: {fileID: 5079638563267615425, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 5563441909298446459, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.34794664

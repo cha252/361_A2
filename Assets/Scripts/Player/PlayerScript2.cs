@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
 
+// 08/11/25 c - resolved 
 public class PlayerScript2 : MonoBehaviour
 {
     private CharacterController mController;
@@ -14,10 +15,14 @@ public class PlayerScript2 : MonoBehaviour
 
     private Transform mCharacterModel;
 
-    public Vector3 respawnPosition; // jy - respawn location. 
-    public float fallThreshold = -20f; //jy - respawn fall threshold 
+    public Vector3 respawnPosition; 
+    public float fallThreshold = -20f; //jy - de fualt respawn fall threshold 
+
     [SerializeField] TextMeshProUGUI numCoinsText, numLivesText; //TextMeshPro objects for UI
     private int numCoins, numLives; //Int values for coins and lives
+
+    
+    private Vector3 externalForce = Vector3.zero; // jy - knockback related  for bomb obstacle
 
     // Input Actions
     private InputAction mMoveAction, mWalkAction, mSprintAction, mJumpAction;
@@ -54,14 +59,28 @@ public class PlayerScript2 : MonoBehaviour
         mVelocity.y = 7.0f;
         mAnimator.SetTrigger("Jump");
     }
+
     private void Respawn()
     {
-        mController.enabled = false; 
+        mController.enabled = false;
         transform.position = respawnPosition;
         mController.enabled = true;
         mVelocity = Vector3.zero;
+
+       
+        externalForce = Vector3.zero; // jy. reset knockback force on respawn
+
         //Decrement the lives value
         numLives--;
+    }
+
+
+    public void GetKnockedBack(Vector3 direction, float force)
+    {
+        
+        direction.y = 0.7f; // jy - added slight upward force for more dynamic effect
+        direction = direction.normalized * force;
+        externalForce = direction;
     }
 
     private float mTargetRotationY = 0f;
@@ -90,7 +109,7 @@ public class PlayerScript2 : MonoBehaviour
 
             if (mWalkAction.IsPressed())
             {
-                targetSpeed = WalkSpeed;
+                targetSpeed = WalkSpeed; // a, d
             }
             else if (mSprintAction.IsPressed())
             {
@@ -120,7 +139,7 @@ public class PlayerScript2 : MonoBehaviour
         {
             mVelocity.z = 0.0f;
         }
-    
+
         // Update Animator Variables
         mAnimator.SetFloat("Speed", Mathf.Abs(mVelocity.z));
         mAnimator.SetBool("isGrounded", mController.isGrounded);
@@ -130,7 +149,6 @@ public class PlayerScript2 : MonoBehaviour
             Jump();
         }
 
-        
         if (transform.position.y < fallThreshold)
         {
             Respawn();
@@ -139,9 +157,12 @@ public class PlayerScript2 : MonoBehaviour
         // Update whether Character was grounded last frame
         mWasGrounded = mController.isGrounded;
 
+        Vector3 finalVelocity = mVelocity + externalForce;  // jy - apply external force (knockback from bomb) to final velocity
+        externalForce = Vector3.Lerp(externalForce, Vector3.zero, 2f * Time.deltaTime);  // jy - gradually decrease knockback force over time
+
         // Move Character
-        mController.Move(mVelocity * Time.deltaTime);
-        
+        mController.Move(finalVelocity * Time.deltaTime);
+
         //Update the coin and lives vaules
         numCoinsText.text = numCoins.ToString();
         numLivesText.text = numLives.ToString();
@@ -149,7 +170,7 @@ public class PlayerScript2 : MonoBehaviour
 
     void LateUpdate()
     {
-        mCharacterModel.localRotation = Quaternion.Euler(0, mTargetRotationY, 0);
+        mCharacterModel.localRotation = Quaternion.Euler(0, mTargetRotationY, 0); // ** rotating 'rig'. 
     }
 
     //Added the below method to collect the coins
