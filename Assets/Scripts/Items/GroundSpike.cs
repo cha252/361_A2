@@ -60,9 +60,10 @@ public class GroundSpike : MonoBehaviour
         transform.position = loweredPosition;
         isMoving = false;
 
-        void OnCollisionEnter(Collision collision)
-        {
-            Debug.Log("Spike hit: " + collision.gameObject.name); // for debugging
-        }
+        
+    }
+    void OnCollisionEnter(Collision collision)
+    {
+        //Debug.Log("Spike hit: " + collision.gameObject.name); // for debugging
     }
 }
