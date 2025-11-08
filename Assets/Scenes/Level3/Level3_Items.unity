@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a50d04102f429ce49bb94f0791d4ed3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raise_height: 1.6
+  raise_height: 2
   raise_speed: 11
   stay_duration: 1
   lower_speed: 11
@@ -367,7 +367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a50d04102f429ce49bb94f0791d4ed3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raise_height: 1.6
+  raise_height: 2
   raise_speed: 11
   stay_duration: 1
   lower_speed: 11
