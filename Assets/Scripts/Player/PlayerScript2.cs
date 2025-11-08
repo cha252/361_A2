@@ -66,6 +66,7 @@ public class PlayerScript2 : MonoBehaviour
         transform.position = respawnPosition;
         mController.enabled = true;
         mVelocity = Vector3.zero;
+        transform.parent = null;
 
        
         externalForce = Vector3.zero; // jy. reset knockback force on respawn
@@ -183,6 +184,10 @@ public class PlayerScript2 : MonoBehaviour
             other.gameObject.SetActive(false);
             //Update the player's coin count
             numCoins++;
+        }
+        else if (other.CompareTag("Laser"))
+        {
+            Respawn();
         }
     }
 }

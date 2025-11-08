@@ -4,20 +4,17 @@ using UnityEngine;
 public class ColumnPlatformScript : MonoBehaviour
 {
     //Declare variables
-    public Transform waypoint1, waypoint2, waypoint3;
+    public Transform waypoint1, waypoint2, waypoint3, waypoint4;
     public float speed = 2.0f;
     private Transform currentTarget;
-    private bool movingUp;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         // Set the initial target to waypoint1
-        currentTarget = waypoint1;
+        currentTarget = waypoint2;
         // Set initial platform position
-        transform.position = waypoint1.position;
-        //Initialise moving up boolean
-        movingUp = true;
+        transform.position = waypoint2.position;
     }
 
     // Update is called once per frame
@@ -29,28 +26,23 @@ public class ColumnPlatformScript : MonoBehaviour
         //if the platform has reached the target waypoint
         if (transform.position == currentTarget.position)
         {
-            //Switch to the next waypoint
+            //Determine the next waypoint
             if (currentTarget == waypoint1)
             {
                 currentTarget = waypoint2;
-                movingUp = true;
             }
+            else if (currentTarget == waypoint2)
+            {
+                currentTarget = waypoint3;
+            }   
             else if (currentTarget == waypoint3)
             {
-                currentTarget = waypoint2;
-                movingUp = false;
-            }
-            else
+                currentTarget = waypoint4;
+            }   
+            else if(currentTarget == waypoint4)
             {
-                if (movingUp)
-                {
-                    currentTarget = waypoint3;
-                }
-                else
-                {
-                    currentTarget = waypoint1;
-                }
-            }
+                currentTarget = waypoint1;
+            }   
         }
     }
 
