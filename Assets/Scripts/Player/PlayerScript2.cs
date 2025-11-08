@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using TMPro;
 
@@ -19,7 +20,7 @@ public class PlayerScript2 : MonoBehaviour
     public float fallThreshold = -20f; //jy - de fualt respawn fall threshold 
 
     [SerializeField] TextMeshProUGUI numCoinsText, numLivesText; //TextMeshPro objects for UI
-    private int numCoins, numLives; //Int values for coins and lives
+    public int level;
 
     
     private Vector3 externalForce = Vector3.zero; // jy - knockback related  for bomb obstacle
@@ -47,10 +48,6 @@ public class PlayerScript2 : MonoBehaviour
         mWalkAction = InputSystem.actions.FindAction("Walk");
         mSprintAction = InputSystem.actions.FindAction("Sprint");
         mJumpAction = InputSystem.actions.FindAction("Jump");
-
-        //Initialise the coins and lives values
-        numCoins = 0;
-        numLives = 5;
     }
 
     private void Jump()
@@ -62,17 +59,32 @@ public class PlayerScript2 : MonoBehaviour
 
     private void Respawn()
     {
-        mController.enabled = false;
-        transform.position = respawnPosition;
-        mController.enabled = true;
-        mVelocity = Vector3.zero;
-        transform.parent = null;
+        //If not in level 0
+        if (level != 0)
+        {
+            //Decrement the lives value
+            GameManagerScript.instance.RemoveLife();
+        }
+        
+        //If the player still has lives
+        if (GameManagerScript.instance.numLives > 0)
+        {
+            mController.enabled = false;
+            transform.position = respawnPosition;
+            mController.enabled = true;
+            mVelocity = Vector3.zero;
+            transform.parent = null;
 
-       
-        externalForce = Vector3.zero; // jy. reset knockback force on respawn
-
-        //Decrement the lives value
-        numLives--;
+            externalForce = Vector3.zero; // jy. reset knockback force on respawn
+        }
+        //If the player has run out of lives
+        else
+        {
+            //Reset the player's number of coins and lives
+            GameManagerScript.instance.Reset();
+            //Load level 0
+            SceneManager.LoadScene("Level0_Loader", LoadSceneMode.Single);
+        }
     }
 
 
@@ -165,8 +177,8 @@ public class PlayerScript2 : MonoBehaviour
         mController.Move(finalVelocity * Time.deltaTime);
 
         //Update the coin and lives vaules
-        numCoinsText.text = numCoins.ToString();
-        numLivesText.text = numLives.ToString();
+        numCoinsText.text = GameManagerScript.instance.numCoins.ToString();
+        numLivesText.text = GameManagerScript.instance.numLives.ToString();
     }
 
     void LateUpdate()
@@ -183,7 +195,7 @@ public class PlayerScript2 : MonoBehaviour
             //Hide the coin
             other.gameObject.SetActive(false);
             //Update the player's coin count
-            numCoins++;
+            GameManagerScript.instance.AddCoin();
         }
         else if (other.CompareTag("Laser"))
         {
