@@ -244,7 +244,31 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: b73d702678f096547bf5c78e93f0c22f, type: 2}
     - target: {fileID: 2778433207053295655, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2778433207053295655, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
+      propertyPath: numCoinsText
+      value: 
+      objectReference: {fileID: 1588137222}
+    - target: {fileID: 2778433207053295655, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
+      propertyPath: numLivesText
+      value: 
+      objectReference: {fileID: 1012919373}
+    - target: {fileID: 2778433207053295655, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
+      propertyPath: fallThreshold
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2778433207053295655, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
+      propertyPath: respawnPosition.x
+      value: 0.3479452
+      objectReference: {fileID: 0}
+    - target: {fileID: 2778433207053295655, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
+      propertyPath: respawnPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2778433207053295655, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
+      propertyPath: respawnPosition.z
+      value: -48.55872
       objectReference: {fileID: 0}
     - target: {fileID: 2778433207053295655, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
       propertyPath: scenesToLoad.Array.size
@@ -352,16 +376,8 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2446337385511893740, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2097856891}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5079638563267615425, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 781671792}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
---- !u!1 &781671789 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5079638563267615425, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
-  m_PrefabInstance: {fileID: 781671788}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &781671790 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2446337385511893740, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
@@ -372,24 +388,6 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 9185072462451073421, guid: 2d03d37011b628a4eb5bea6e120fe9f7, type: 3}
   m_PrefabInstance: {fileID: 781671788}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &781671792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 781671789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e380cba4c4397241994267a6974ba1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mVelocity: {x: 0, y: 0, z: 0}
-  WalkSpeed: 2
-  RunSpeed: 4
-  SprintSpeed: 6
-  respawnPosition: {x: 0.3479452, y: 1, z: -48.55872}
-  fallThreshold: -20
 --- !u!1 &1012919371
 GameObject:
   m_ObjectHideFlags: 0
