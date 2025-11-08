@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class RotatingScript : MonoBehaviour
@@ -31,6 +30,7 @@ public class RotatingScript : MonoBehaviour
         transform.position = centerPoint.position + offset;
     }
 
+    //Methods to move the player with the platforms as they move
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

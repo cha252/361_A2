@@ -17,6 +17,7 @@ public class wallScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Move the back and forth between the min and max y values
         float range = maxY - minY;
         float newY = Mathf.PingPong(Time.time * speed, range) + minY;
         transform.position = new Vector3(transform.position.x, newY, transform.position.z);
