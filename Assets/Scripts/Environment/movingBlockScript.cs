@@ -5,6 +5,7 @@ using UnityEngine;
 public class movigBlockScript : MonoBehaviour
 {
     //Declare variables
+    public GameObject movingBlock;
     public float speed = 2.5f;
     public float minZ = 45.0f;
     public float maxZ = 65.0f;
@@ -22,5 +23,21 @@ public class movigBlockScript : MonoBehaviour
         float range = maxZ - minZ;
         float newZ = Mathf.PingPong(Time.time * speed, range) + minZ;
         transform.position = new Vector3(transform.position.x, transform.position.y, newZ);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            other.transform.parent = movingBlock.transform;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            other.transform.parent = null;
+        }
     }
 }
